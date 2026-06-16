@@ -14,6 +14,18 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>AgentScopeDemo</name>
 	<description>AgentScopeDemo</description>
+
+	<modules>
+		<!--   主管Agent 负责整体执行计划的制定    -->
+<!--		<module>manager_agent</module>-->
+		<!--   路线制定Agent     -->
+<!--		<module>routeMaking_agent</module>-->
+		<!--   行程规划Agent     -->
+<!--		<module>tripPlanner_agent</module>-->
+		<!--   公共模块    -->
+		<module>commons</module>
+	</modules>
+
 	<properties>
 		<!--  SpringBoot 4      -->
 		<spring-boot.version>4.0.2</spring-boot.version>
