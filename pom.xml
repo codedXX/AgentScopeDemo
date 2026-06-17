@@ -17,11 +17,11 @@
 
 	<modules>
 		<!--   主管Agent 负责整体执行计划的制定    -->
-<!--		<module>manager_agent</module>-->
+		<module>manager_agent</module>
 		<!--   路线制定Agent     -->
-<!--		<module>routeMaking_agent</module>-->
+		<module>routeMaking_agent</module>
 		<!--   行程规划Agent     -->
-<!--		<module>tripPlanner_agent</module>-->
+		<module>tripPlanner_agent</module>
 		<!--   公共模块    -->
 		<module>commons</module>
 	</modules>

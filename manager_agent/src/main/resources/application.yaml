@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  ai:
+    # LangFuse Agent数据观测
+    observation:
+      langfuse:
+        # LangFuse 服务地址
+        endpoint: ${LANGFUSE_ADDR}
+        # 私钥
+        secret-key: ${LANGFUSE_SECRET_KEY}
+        # 公钥
+        public-key: ${LANGFUSE_PUBLIC_KEY}
+        # 采样率（生产环境建议0.1-0.5）
+        sampling-rate: 1.0
+
+agent:
+  model_name: ${MODEL_NAME}
+  alibaba_dashscope_key: ${ALIBABA_DASHCOPE_KEY}
+
+mcp:
+  baidu_map_addr: ${BAIDU_MAP_ADDR}
