@@ -72,8 +72,8 @@ public class AgentUtils {
                         .checkRunning(true)
                         //工具执行超时配置
                         .toolExecutionConfig(ExecutionConfig.builder()
-                                //工具执行超时 3分钟
-                                .timeout(Duration.ofSeconds(120))
+                                //工具执行超时 5分钟 (远程A2A Agent是完整ReAct+思考+地图MCP, 2分钟常不够)
+                                .timeout(Duration.ofSeconds(300))
                                 //最大尝试次数
                                 .maxAttempts(1)
                                 .build())
