@@ -1,5 +1,7 @@
 package com.dyx;
 
+import io.agentscope.core.tool.Tool;
+import io.agentscope.core.tool.ToolParam;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -30,7 +30,7 @@ public class AgentUtils {
     /**
      * 创建ReAct Agent Builder
      */
-    public ReActAgent getReActAgentBuilder(String name, String description) {
+    public ReActAgent.Builder getReActAgentBuilder(String name, String description) {
         String aliApiKey = properties.getAlibabaDashscopeKey();
         String modelName = properties.getModelName();
         log.info("============");
@@ -38,6 +38,7 @@ public class AgentUtils {
         log.info("============");
         return ReActAgent.builder().
                 name(name)
+                .description(description)
                 .model(DashScopeChatModel.builder()
                         //请求语言大模型的apikey
                         .apiKey(aliApiKey)
@@ -57,8 +58,8 @@ public class AgentUtils {
                         //最大尝试次数
                         .maxAttempts(1)
                         .build()
-                )
-                .build();
+                );
+//                .build();
     }
 
     /**
@@ -76,9 +77,9 @@ public class AgentUtils {
                 //构建Prompt
                 promptUtils.getPrompt(prompt),
                 //流式响应配置
-                StreamOptions.defaults(),
+                StreamOptions.defaults()
                 //响应格式
-                ResponseSchema.class
+//                ResponseSchema.class
         );
 
     }

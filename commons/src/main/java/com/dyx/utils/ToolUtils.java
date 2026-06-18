@@ -1,5 +1,6 @@
 package com.dyx.utils;
 
+import io.agentscope.core.ReActAgent;
 import io.agentscope.core.model.ToolSchema;
 import io.agentscope.core.tool.Toolkit;
 import io.agentscope.core.tool.mcp.McpClientWrapper;
@@ -37,6 +38,20 @@ public class ToolUtils {
     {
         //把MCP服务端的所有工具添加到工具包
         toolkit.registerMcpClient(mcp).block();
+        return toolkit;
+    }
+
+    /**
+     * 把子Agent注册为工具
+     * 注意：ReActAgent不是AgentTool、也没有@Tool方法，
+     * 不能用registerTool(Object)，必须走subAgent()通道包装成SubAgentTool。
+     * 工具名 = "call_" + agentName(小写)，工具描述取自子Agent的description。
+     */
+    public Toolkit getSubAgentToolkit(ReActAgent agent)
+    {
+        toolkit.registration()
+                .subAgent(() -> agent)
+                .apply();
         return toolkit;
     }
 
